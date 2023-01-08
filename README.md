@@ -11,10 +11,10 @@ and confectionery.
 
 <p style="text-decoration: underline;">Pages</p>
 
-The website includes a Cup Configurator which will animatically fill up as the user chooses more sweets to
+- The website includes a Cup Configurator which will animatically fill up as the user chooses more sweets to
 add to their sweet cup, the user can then add to their basket and complete their order.
-<br>
-The website will also include a page solely for browsing and adding specific products to their basket, which expands the capabalities from a small amount of multiple sweets to a larger amount of specific sweets.
-<br>
-Discounts will also be added which can be controlled by the companies web administrators which can be redeemed by the user.
+
+- The website will also include a page solely for browsing and adding specific products to their basket, which expands the capabalities from a small amount of multiple sweets to a larger amount of specific sweets.
+
+- Discounts will also be added which can be controlled by the companies web administrators which can be redeemed by the user.
 
