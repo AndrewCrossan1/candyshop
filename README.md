@@ -2,7 +2,7 @@
 A Django REST Framework API made to be used with the frontend application 'CandyShop' 
 
 ## Purpose
-The purpose of this repository is to serve as a backend for my concept application CandyShop
+The purpose of this repository is to serve as a backend for my concept application CandyShop, providing it with serialized JSON containing products, categories, discounts, user accounts, orders and more.
 
 <hr>
 
