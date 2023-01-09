@@ -46,12 +46,14 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'users.apps.UsersConfig',
+    'api.apps.ApiConfig',
     'django.contrib.sites',
     'dj_rest_auth.registration',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth',
+    'taggit',
 ]
 
 REST_FRAMEWORK = {
