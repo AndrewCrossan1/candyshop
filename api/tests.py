@@ -51,17 +51,20 @@ class BrandTests(TestCase):
 class ProductTest(TestCase):
     # Test Product Model
     def setUp(self):
-        category = Category.objects.create(Name="Test Category",
-                                           Description="Test Description")
-        brand = Brand.objects.create(Name="Test Brand",
-                                     Description="Test Description")
-        Product.objects.create(Name="Test Product",
-                               Description="Test Description",
-                               Category=category,
-                               Brand=brand,
-                               Price=100,
-                               Stock=10,
-                               Image="test.jpg")
+        category = Category.objects.create(
+            Name="Test Category",
+            Description="Test Description")
+        brand = Brand.objects.create(
+            Name="Test Brand",
+            Description="Test Description")
+        Product.objects.create(
+            Name="Test Product",
+            Description="Test Description",
+            Category=category,
+            Brand=brand,
+            Price=100,
+            Stock=10,
+            Image="test.jpg")
 
     def test_product_creation(self):
         # Test the product
