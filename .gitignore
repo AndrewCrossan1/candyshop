@@ -16,3 +16,5 @@ db.sqlite3
 # Ignore .idea files
 .idea/
 /api/migrations/
+/users/migrations/0002_user_groups_user_user_permissions.py
+/users/migrations/0003_remove_user_groups_remove_user_user_permissions.py
