@@ -138,7 +138,7 @@ class Product(models.Model):
     class Meta:
         verbose_name_plural = "Products"
         verbose_name = "Product"
-        ordering = ['Name']
+        ordering = ['ProductID']
 
     def __str__(self):
         return self.Name
