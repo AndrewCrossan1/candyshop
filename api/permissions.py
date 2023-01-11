@@ -2,55 +2,45 @@ from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser, B
 from rest_action_permissions.permissions import ActionPermission
 
 
+# Is the user a Product Manager?
+class IsProductManager(BasePermission):
+    def has_permission(self, request, view):
+        return request.user.groups.filter(name='Product Manager').exists()
+
+
+# Is the user an Account Manager?
+class IsAccountManager(BasePermission):
+    def has_permission(self, request, view):
+        return request.user.groups.filter(name='Account Manager').exists()
+
+
+class IsAPIManager(BasePermission):
+    def has_permission(self, request, view):
+        return request.user.groups.filter(name='API Manager').exists()
+
+
 class ProductPermission(ActionPermission):
     # The admin user can do anything
     enough_perms = IsAdminUser
 
-    # Permissions for each action
-    create_perms = IsAdminUser
-    retrieve_perms = AllowAny
-    update_perms = IsAdminUser
-    partial_update_perms = IsAdminUser
-    list_perms = AllowAny
-    destroy_perms = IsAdminUser
-    delete_perms = IsAdminUser
-
     # General permissions
     read_perms = AllowAny
-    write_perms = IsAdminUser
+    write_perms = IsAPIManager
 
 
 class CategoryPermission(ActionPermission):
     # The admin user can do anything
     enough_perms = IsAdminUser
 
-    # Permissions for each action
-    create_perms = IsAdminUser
-    retrieve_perms = AllowAny
-    update_perms = IsAdminUser
-    partial_update_perms = IsAdminUser
-    list_perms = AllowAny
-    destroy_perms = IsAdminUser
-    delete_perms = IsAdminUser
-
     # General permissions
     read_perms = AllowAny
-    write_perms = IsAdminUser
+    write_perms = IsAPIManager
 
 
 class BrandPermission(ActionPermission):
     # The admin user can do anything
     enough_perms = IsAdminUser
 
-    # Permissions for each action
-    create_perms = IsAdminUser
-    retrieve_perms = AllowAny
-    update_perms = IsAdminUser
-    partial_update_perms = IsAdminUser
-    list_perms = AllowAny
-    destroy_perms = IsAdminUser
-    delete_perms = IsAdminUser
-
     # General permissions
     read_perms = AllowAny
-    write_perms = IsAdminUser
+    write_perms = IsAPIManager

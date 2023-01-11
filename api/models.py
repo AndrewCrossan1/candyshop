@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.utils.html import format_html
 from taggit.managers import TaggableManager
@@ -139,7 +138,7 @@ class Product(models.Model):
     class Meta:
         verbose_name_plural = "Products"
         verbose_name = "Product"
-        ordering = ['Name']
+        ordering = ['ProductID']
 
     def __str__(self):
         return self.Name
