@@ -16,8 +16,7 @@ class CategorySerializer(serializers.ModelSerializer, TaggitSerializer):
 class ProductSerializer(serializers.ModelSerializer, TaggitSerializer):
 
     Tags = TagListSerializerField()
-    Category = CategorySerializer(many=False, read_only=True)
-
+    
     class Meta:
         model = Product
         fields = ('ProductID', 'Name', 'Description', 'Category', 'Price', 'Brand', 'Image', 'Tags', 'Prop_Rating', 'Highest_Rated')
