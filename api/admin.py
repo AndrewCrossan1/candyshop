@@ -7,21 +7,19 @@ from .models import Product, Category, Brand, ProductRating
 @admin.action(description='Generate new product')
 def copy(modeladmin, request, queryset):
     temp = None
-    if queryset.count() != 1:
-        modeladmin.message_user(request, 'A new product can only be generated using one product')
-        return
     for product in queryset:
         temp = product
-    NewProduct = Product.objects.create(
-        Name=temp.Name,
-        Description=temp.Description,
-        Price=temp.Price,
-        Category=temp.Category,
-        Tags=temp.Tags,
-        Brand=temp.Brand,
-        Stock=0
-    )
-    NewProduct.save()
+        NewProduct = Product.objects.create(
+            Name=temp.Name,
+            Description=temp.Description,
+            Price=temp.Price,
+            Category=temp.Category,
+            Tags=temp.Tags,
+            Brand=temp.Brand,
+            Image=temp.Image,
+            Stock=0
+        )
+        NewProduct.save()
     modeladmin.message_user(request, 'Product copied!')
     return
 

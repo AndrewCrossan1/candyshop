@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.contrib import admin
 from django.db import models
 from django.utils.html import format_html
@@ -23,7 +25,7 @@ class Category(models.Model):
         total = 0
         for product in self.product_set.all():
             total += product.Prop_Rating
-        return total / self.product_set.count()
+        return round(Decimal(total / self.product_set.count()), 2)
 
     class Meta:
         verbose_name_plural = "Categories"
@@ -139,6 +141,7 @@ class Product(models.Model):
         verbose_name_plural = "Products"
         verbose_name = "Product"
         ordering = ['ProductID']
+        index_together = (('ProductID', 'Name'), ('ProductID', 'Category'), ('ProductID', 'Brand'))
 
     def __str__(self):
         return self.Name
