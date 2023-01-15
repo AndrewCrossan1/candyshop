@@ -10,7 +10,8 @@ class CategorySerializer(serializers.ModelSerializer, TaggitSerializer):
 
     class Meta:
         model = Category
-        fields = '__all__'
+        fields = ('CategoryID', 'Name', 'Description', 'Tags', 'product_count', 'average_rating', 'get_url')
+        read_only_fields = ('product_count', 'average_rating', 'get_url')
 
 
 class ProductSerializer(serializers.ModelSerializer, TaggitSerializer):
