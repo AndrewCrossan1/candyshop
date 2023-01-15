@@ -27,6 +27,10 @@ class Category(models.Model):
             total += product.Prop_Rating
         return round(Decimal(total / self.product_set.count()), 2)
 
+    @property
+    def get_url(self):
+        return self.Name.replace(' ', '-').lower().replace('&', 'and')
+
     class Meta:
         verbose_name_plural = "Categories"
         verbose_name = "Category"
