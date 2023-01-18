@@ -40,7 +40,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('Name', 'product_count', 'average_rating')
+    list_display = ('Name', 'product_count', 'average_rating', 'get_url')
 
 
 @admin.register(Brand)
