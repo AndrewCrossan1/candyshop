@@ -49,6 +49,15 @@ class ProductViewSet(ModelViewSet):
         else:
             return Response({'message': 'No products found'})
 
+    @action(detail=False, methods=['get'])
+    def get_new_products(self, request):
+        products = Product.objects.all()[3:]
+        serializer = ProductSerializer(products, many=True)
+        if serializer.data:
+            return Response(serializer.data)
+        else:
+            return Response({'message': 'No products found'})
+
 
 class CategoryViewSet(ModelViewSet):
     permission_classes = [CategoryPermission]
