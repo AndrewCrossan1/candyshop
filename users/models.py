@@ -17,11 +17,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(verbose_name='last_name', max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
     phone_number = models.CharField(max_length=20, null=True, blank=True)
-    address = models.CharField(max_length=200)
-    city = models.CharField(max_length=200)
+    address = models.CharField(max_length=200, null=True, blank=True)
+    city = models.CharField(max_length=200, null=True, blank=True)
     state = models.CharField(max_length=200, null=True, blank=True)
-    country = models.CharField(max_length=200)
-    zip_code = models.CharField(max_length=10)
+    country = models.CharField(max_length=200, null=True, blank=True)
+    zip_code = models.CharField(max_length=10, null=True, blank=True)
 
     USERNAME_FIELD = 'email'
     # this field means that when you try to sign in the username field will be the email
