@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Shop Administration
 from .models import Product, Category, Brand, ProductRating
-
+from import_export.admin import ExportActionMixin
 
 @admin.action(description='Generate new product')
 def copy(modeladmin, request, queryset):
@@ -29,7 +29,7 @@ class RatingInlineAdmin(admin.TabularInline):
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(ExportActionMixin, admin.ModelAdmin):
     list_display = ('Name', 'Price', 'Availability', 'Updated', 'category_name', 'brand_name', 'Rating')
     list_filter = ('Created', 'Updated', 'Category')
     readonly_fields = ('Available', 'Rating')
