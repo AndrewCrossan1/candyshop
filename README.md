@@ -17,4 +17,3 @@ add to their sweet cup, the user can then add to their basket and complete their
 - The website will also include a page solely for browsing and adding specific products to their basket, which expands the capabalities from a small amount of multiple sweets to a larger amount of specific sweets.
 
 - Discounts will also be added which can be controlled by the companies web administrators which can be redeemed by the user.
-
