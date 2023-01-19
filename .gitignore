@@ -4,8 +4,6 @@
 # Ignore Virtual Environment directory
 venv/
 
-# Ignore default database
-db.sqlite3
 
 # Ignore .pyc files
 *.pyc
