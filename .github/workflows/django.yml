@@ -2,9 +2,9 @@ name: Django CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "development" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "development" ]
 
 jobs:
   build:
@@ -29,6 +29,4 @@ jobs:
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
-        python manage.py makemigrations
-        python manage.py migrate
         python manage.py test
